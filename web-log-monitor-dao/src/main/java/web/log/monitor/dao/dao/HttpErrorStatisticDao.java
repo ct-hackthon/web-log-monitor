@@ -11,9 +11,9 @@ import org.springframework.stereotype.Repository;
  * Modification history : 
  *
  * Sr *** Date      *** Modified By *** Why & What is modified
- * 1. *** 2017/7/4 *** fulw         *** Initial
+ * 1. *** 2017/7/4  *** fulw        *** Initial
  ***********************************************************/
-@Repository
+@Repository("httpErrorStatisticDao")
 public class HttpErrorStatisticDao extends BaseDao{
 
 
