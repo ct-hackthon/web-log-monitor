@@ -1,7 +1,4 @@
-package web.log.monitor.service.impl;
-
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+package web.log.monitor.dao.dao;
 
 /************************************************************
  * Copy Right Information : 
@@ -12,11 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * Modification history : 
  *
  * Sr *** Date      *** Modified By *** Why & What is modified
- * 1. *** 2017/7/4 *** fulw *** Initial
+ * 1. *** 2017/7/4 *** fulw         *** Initial
  ***********************************************************/
-@Configuration
-@ComponentScan
-public class Application {
-
-
+public class HttpErrorStatisticDao {
 }

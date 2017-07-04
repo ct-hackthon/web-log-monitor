@@ -20,6 +20,10 @@
     <name>web-log-monitor-service-api</name>
 
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
 
     </dependencies>
 </project>

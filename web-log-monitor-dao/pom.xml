@@ -13,21 +13,21 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>web-log-monitor-service-impl</artifactId>
-    <version>${web.log.monitor.service.impl.version}</version>
+    <artifactId>web-log-monitor-dao</artifactId>
+    <version>${web.log.monitor.dao.version}</version>
     <packaging>jar</packaging>
 
-    <name>web-log-monitor-service-impl</name>
+    <name>web-log-monitor-dao</name>
 
     <dependencies>
 
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-math3</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
-            <groupId>web-log-monitor</groupId>
-            <artifactId>web-log-monitor-service-api</artifactId>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
         </dependency>
     </dependencies>
 </project>

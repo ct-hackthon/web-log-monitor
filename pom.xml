@@ -39,7 +39,7 @@
 
         <spring.version>4.3.9.RELEASE</spring.version>
         <guava.version>19.0</guava.version>
-        <lombok.version>1.16.16.0</lombok.version>
+        <lombok.version>1.16.16</lombok.version>
         <junit.version>4.12</junit.version>
         <log4j.version>2.6.2</log4j.version>
         <commons.logging.version>1.2</commons.logging.version>
@@ -51,6 +51,7 @@
     <dependencyManagement>
         <dependencies>
             <!-- ==================== spring  ==================== -->
+            <!-- Spring Bom -->
             <!--<dependency>-->
                 <!--<groupId>org.springframework</groupId>-->
                 <!--<artifactId>spring-framework-bom</artifactId>-->
@@ -100,6 +101,13 @@
                 <scope>test</scope>
             </dependency>
 
+            <!-- Spring JDBC -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
             <!-- ==================== 3rd party  ==================== -->
             <!-- Junit -->
             <dependency>
@@ -108,11 +116,13 @@
                 <version>${junit.version}</version>
                 <scope>test</scope>
             </dependency>
-            <!--<dependency>-->
-                <!--<groupId>commons-logging</groupId>-->
-                <!--<artifactId>commons-logging</artifactId>-->
-                <!--<version>${commons.logging.version}</version>-->
-            <!--</dependency>-->
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-math3</artifactId>
@@ -149,7 +159,12 @@
             </dependency>
             <dependency>
                 <groupId>web-log-monitor</groupId>
-                <artifactId>web-log-monitor-service-api</artifactId>
+                <artifactId>web-log-monitor-dao</artifactId>
+                <version>${web.log.monitor.dao.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>web-log-monitor</groupId>
+                <artifactId>web-log-monitor-test</artifactId>
                 <version>${web.log.monitor.test.version}</version>
             </dependency>
 
@@ -157,7 +172,6 @@
     </dependencyManagement>
 
     <dependencies>
-
         <!-- Spring core -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -175,6 +189,7 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
         </dependency>
+
 
     </dependencies>
 
@@ -268,6 +283,7 @@
     <modules>
         <module>web-log-monitor-service-impl</module>
         <module>web-log-monitor-service-api</module>
+        <module>web-log-monitor-dao</module>
         <module>web-log-monitor-test</module>
     </modules>
 
