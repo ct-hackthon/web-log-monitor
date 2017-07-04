@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <!-- parent module GAV here -->
+    <!--
+    <parent>
+        <groupId></groupId>
+        <artifactId></artifactId>
+        <version></version>
+    </parent>
+    -->
+
+    <!-- main module GAV here -->
+    <groupId>web-log-monitor</groupId>
+    <artifactId>web-log-monitor</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>web-log-monitor</name>
+
+    <!-- properties Here -->
+    <properties>
+
+        <!-- maven -->
+        <java.version>1.8</java.version>
+        <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- self -->
+        <web.log.monitor.service.api.version>1.0.0</web.log.monitor.service.api.version>
+        <web.log.monitor.service.impl.version>1.0.0</web.log.monitor.service.impl.version>
+        <web.log.monitor.test.version>1.0.0</web.log.monitor.test.version>
+        <web.log.monitor.dao.version>1.0.0</web.log.monitor.dao.version>
+        <web.log.monitor.common.version>1.0.0</web.log.monitor.common.version>
+
+        <spring.version>4.3.9.RELEASE</spring.version>
+        <guava.version>19.0</guava.version>
+        <lombok.version>1.16.16.0</lombok.version>
+        <junit.version>4.12</junit.version>
+        <log4j.version>2.6.2</log4j.version>
+        <commons.logging.version>1.2</commons.logging.version>
+        <commons.math3.version>3.6.1</commons.math3.version>
+
+        <packaging.all>war</packaging.all>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- ==================== spring  ==================== -->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework</groupId>-->
+                <!--<artifactId>spring-framework-bom</artifactId>-->
+                <!--<version>>${spring.version}</version>-->
+                <!--<type>pom</type>-->
+                <!--<scope>import</scope>-->
+            <!--</dependency>-->
+
+            <!-- Spring core -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springramework</groupId>
+                <artifactId>spring-expression</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <!-- Spring Test -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- ==================== 3rd party  ==================== -->
+            <!-- Junit -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>commons-logging</groupId>-->
+                <!--<artifactId>commons-logging</artifactId>-->
+                <!--<version>${commons.logging.version}</version>-->
+            <!--</dependency>-->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-math3</artifactId>
+                <version>${commons.math3.version}</version>
+            </dependency>
+
+            <!-- ================== Logging ======================= -->
+            <!--<dependency>-->
+                <!--<groupId>log4j</groupId>-->
+                <!--<artifactId>log4j</artifactId>-->
+                <!--<version>${log4j.version}</version>-->
+            <!--</dependency>-->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-jcl</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+            <!-- =================== Module ======================== -->
+            <dependency>
+                <groupId>web-log-monitor</groupId>
+                <artifactId>web-log-monitor-service-impl</artifactId>
+                <version>${web.log.monitor.service.impl.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>web-log-monitor</groupId>
+                <artifactId>web-log-monitor-service-api</artifactId>
+                <version>${web.log.monitor.service.api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>web-log-monitor</groupId>
+                <artifactId>web-log-monitor-service-api</artifactId>
+                <version>${web.log.monitor.test.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+
+        <!-- Spring core -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>utf8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <allowSnapshots>false</allowSnapshots>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <skipTests>false</skipTests>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-junit47</artifactId>
+                        <version>2.10</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <reports/>
+    <!--该元素包括使用报表插件产生报表的规范。当用户执行“mvn site”，这些报表就会运行。 在页面导航栏能看到所有报表的链接。参见reporting元素-->
+    <reporting/>
+
+    <!-- distribution Server configuration here -->
+    <!--
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <url></url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url></url>
+        </snapshotRepository>
+    </distributionManagement>
+    -->
+
+    <!-- Maven Private Server Configuration here -->
+    <!--
+    <repositories>
+        <repository>
+            <id>parent-repository</id>
+            <url></url>
+            <name> Parent Repository</name>
+            <snapshots>
+                <checksumPolicy>ignore</checksumPolicy>
+                <updatePolicy>daily</updatePolicy>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <checksumPolicy>ignore</checksumPolicy>
+                <updatePolicy>daily</updatePolicy>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>parent-repository</id>
+            <url></url>
+            <name> Parent Repository</name>
+        </pluginRepository>
+    </pluginRepositories>
+    -->
+
+    <!-- module configuration here -->
+    <modules>
+        <module>web-log-monitor-service-impl</module>
+        <module>web-log-monitor-service-api</module>
+        <module>web-log-monitor-test</module>
+    </modules>
+
+
+</project>

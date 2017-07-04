@@ -1,0 +1,13 @@
+
+# Intellij  Ignore
+.idea
+*.iml
+
+# Maven ignore
+*/target
+
+# VS Code ignore
+.vscode
+
+# eclipse ignore
+.project
