@@ -1,3 +1,5 @@
+USE Test;
+
 create table `http_error_statistic`
 (
   `Id`  int(11) auto_increment,
