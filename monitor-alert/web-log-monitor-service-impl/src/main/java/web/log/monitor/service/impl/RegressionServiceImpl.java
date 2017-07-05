@@ -5,6 +5,8 @@ import org.apache.commons.math3.stat.regression.SimpleRegression;
 import web.log.monitor.service.api.RegressionService;
 import web.log.monitor.service.entity.RegressionData;
 
+import java.time.LocalDateTime;
+
 /************************************************************
  * Copy Right Information : 
  * Project : ${ProjectName}
@@ -46,6 +48,7 @@ public class RegressionServiceImpl implements RegressionService {
         System.out.println("SSE is "+regression.getSumSquaredErrors());
         System.out.println("predict(0) is "+regression.predict(0));
         System.out.println("predict(1) is "+regression.predict(1));
+
     }
 
     public static void regression() {
@@ -93,8 +96,9 @@ public class RegressionServiceImpl implements RegressionService {
 
     @Override
     public void simpleRegression(RegressionData data) {
+
         SimpleRegression regression = new SimpleRegression();
-        double predictValue = regression.predict(data.getMileSeconds());
+        double predictValue = regression.predict(data.getTimeMinuteId());
 
     }
 }

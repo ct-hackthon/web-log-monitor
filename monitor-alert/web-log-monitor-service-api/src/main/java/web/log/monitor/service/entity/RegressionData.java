@@ -10,12 +10,16 @@ import java.time.LocalDateTime;
 @Data
 public class RegressionData {
 
-    private String url;
-    private double mileSeconds;
+
     private double actualValue;
     private double predictValue;
+
+    private double deviation;
     private double standardDeviation;
+
     private boolean isException;
-    private LocalDateTime dateTime;
+
+    private Long timeMinuteId;
+    private String timeMinuteText;
 
 }

@@ -11,3 +11,6 @@
 
 # eclipse ignore
 .project
+
+# jyputer ignore 
+/ref/notebook/.ipynb_checkoutpoints

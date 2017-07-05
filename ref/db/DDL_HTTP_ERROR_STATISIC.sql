@@ -4,6 +4,7 @@ create table `http_error_statistic`
   `NormalCount`	BIGINT(11) DEFAULT 0 COMMENT 'HTTP200 的数量',
   `ErrorCount` 	BIGINT(11) DEFAULT 0 COMMENT '非HTTP200 的数量',
   `TimeBox` VARCHAR(50),
+  `TimeId` BigInt(64),
   `CreateTime` timestamp null,
   `UpdateTime` timestamp default CURRENT_TIMESTAMP not null,
   PRIMARY KEY (`Id`),

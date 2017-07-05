@@ -31,6 +31,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- self -->
+        <web.log.monitor.biz.version>1.0.0</web.log.monitor.biz.version>
         <web.log.monitor.service.api.version>1.0.0</web.log.monitor.service.api.version>
         <web.log.monitor.service.impl.version>1.0.0</web.log.monitor.service.impl.version>
         <web.log.monitor.test.version>1.0.0</web.log.monitor.test.version>
@@ -167,6 +168,16 @@
                 <artifactId>web-log-monitor-test</artifactId>
                 <version>${web.log.monitor.test.version}</version>
             </dependency>
+            <dependency>
+                <groupId>web-log-monitor</groupId>
+                <artifactId>web-log-monitor-biz</artifactId>
+                <version>${web.log.monitor.biz.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>web-log-monitor</groupId>
+                <artifactId>web-log-monitor-common</artifactId>
+                <version>${web.log.monitor.common.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
@@ -285,6 +296,8 @@
         <module>web-log-monitor-service-api</module>
         <module>web-log-monitor-dao</module>
         <module>web-log-monitor-test</module>
+        <module>web-log-monitor-biz</module>
+        <module>web-log-monitor-common</module>
     </modules>
 
 
