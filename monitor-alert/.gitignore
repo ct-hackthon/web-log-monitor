@@ -1,6 +1,6 @@
 
 # Intellij  Ignore
-../.idea
+.idea
 *.iml
 
 # Maven ignore
