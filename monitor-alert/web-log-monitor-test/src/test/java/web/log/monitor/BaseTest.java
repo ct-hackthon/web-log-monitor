@@ -1,4 +1,4 @@
-package web.log.monitor.common;
+package web.log.monitor;
 
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -18,6 +18,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
         "classpath:/spring/application-context-biz.xml",
+        "classpath:/spring/application-context-dao.xml",
 })
 public class BaseTest {
 }

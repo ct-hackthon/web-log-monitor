@@ -19,8 +19,8 @@ import javax.sql.DataSource;
  ***********************************************************/
 public class BaseDao {
 
-    private JdbcTemplate jdbcTemplate;
-    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+    protected JdbcTemplate jdbcTemplate;
+    protected NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     @Autowired
     public void setNamedParameterDataSource(DataSource dataSource) {

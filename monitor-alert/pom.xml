@@ -43,6 +43,7 @@
         <lombok.version>1.16.16</lombok.version>
         <junit.version>4.12</junit.version>
         <log4j.version>2.6.2</log4j.version>
+        <mysql.jdbc.version>6.0.6</mysql.jdbc.version>
         <commons.logging.version>1.2</commons.logging.version>
         <commons.math3.version>3.6.1</commons.math3.version>
 
@@ -52,26 +53,18 @@
     <dependencyManagement>
         <dependencies>
             <!-- ==================== spring  ==================== -->
-            <!-- Spring Bom -->
-            <!--<dependency>-->
-                <!--<groupId>org.springframework</groupId>-->
-                <!--<artifactId>spring-framework-bom</artifactId>-->
-                <!--<version>>${spring.version}</version>-->
-                <!--<type>pom</type>-->
-                <!--<scope>import</scope>-->
-            <!--</dependency>-->
 
             <!-- Spring core -->
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-core</artifactId>
                 <version>${spring.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>commons-logging</groupId>
-                        <artifactId>commons-logging</artifactId>
-                    </exclusion>
-                </exclusions>
+                <!--<exclusions>-->
+                    <!--<exclusion>-->
+                        <!--<groupId>commons-logging</groupId>-->
+                        <!--<artifactId>commons-logging</artifactId>-->
+                    <!--</exclusion>-->
+                <!--</exclusions>-->
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -109,6 +102,24 @@
                 <version>${spring.version}</version>
             </dependency>
 
+            <!-- ================== Logging ======================= -->
+            <!--<dependency>-->
+            <!--<groupId>log4j</groupId>-->
+            <!--<artifactId>log4j</artifactId>-->
+            <!--<version>${log4j.version}</version>-->
+            <!--</dependency>-->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-jcl</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+
             <!-- ==================== 3rd party  ==================== -->
             <!-- Junit -->
             <dependency>
@@ -116,6 +127,12 @@
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
                 <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.jdbc.version}</version>
             </dependency>
 
             <dependency>
@@ -130,22 +147,7 @@
                 <version>${commons.math3.version}</version>
             </dependency>
 
-            <!-- ================== Logging ======================= -->
-            <!--<dependency>-->
-                <!--<groupId>log4j</groupId>-->
-                <!--<artifactId>log4j</artifactId>-->
-                <!--<version>${log4j.version}</version>-->
-            <!--</dependency>-->
-            <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-core</artifactId>
-                <version>${log4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-jcl</artifactId>
-                <version>${log4j.version}</version>
-            </dependency>
+
 
             <!-- =================== Module ======================== -->
             <dependency>

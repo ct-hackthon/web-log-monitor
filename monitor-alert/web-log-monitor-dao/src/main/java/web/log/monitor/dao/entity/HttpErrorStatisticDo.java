@@ -18,8 +18,12 @@ import java.time.LocalDateTime;
 @Data
 public class HttpErrorStatisticDo {
 
-    private double normalCount;
-    private double errorCount;
-    private LocalDateTime timeBox;
+    private Integer id;
+    private Long normalCount;
+    private Long errorCount;
+    private String timeBox;
+    private Long  timeId;
+    private LocalDateTime createTime;
+    private LocalDateTime updateTime;
 
 }

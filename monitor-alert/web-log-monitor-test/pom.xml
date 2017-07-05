@@ -36,6 +36,11 @@
             <groupId>web-log-monitor</groupId>
             <artifactId>web-log-monitor-common</artifactId>
         </dependency>
+        <dependency>
+            <groupId>web-log-monitor</groupId>
+            <artifactId>web-log-monitor-dao</artifactId>
+        </dependency>
+
 
     </dependencies>
 </project>
