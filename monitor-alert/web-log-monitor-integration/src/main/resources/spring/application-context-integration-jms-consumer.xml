@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:amq="http://activemq.apache.org/schema/core"
+       xmlns:jms="http://www.springframework.org/schema/jms"
+       xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.1.xsd
+	">
+
+
+    <import resource="application-context-integration-jms-broker.xml"/>
+
+    <!-- ============================== 消息监听器 Start =================================-->
+    <!-- 消息监听器 -->
+    <bean id="consumerMessageListener" class="web.log.monitor.integration.jms.Listener"/>
+
+    <!-- 可以获取session的MessageListener -->
+    <bean id="consumerSessionAwareMessageListener" class="web.log.monitor.integration.jms.ConsumerSessionAwareMessageListener"/>
+
+    <!-- 消息监听容器 -->
+    <bean id="jmsContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="queueDestination" />
+        <property name="messageListener" ref="consumerMessageListener" />
+    </bean>
+
+    <bean id="sessionAwareListenerContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="queueDestination" />
+        <property name="messageListener" ref="consumerSessionAwareMessageListener" />
+    </bean>
+    <!-- ============================== 消息监听器 End =================================-->
+
+
+
+</beans>

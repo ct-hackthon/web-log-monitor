@@ -13,23 +13,23 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>web-log-monitor-test</artifactId>
-    <version>${web.log.monitor.test.version}</version>
-    <packaging>jar</packaging>
+    <artifactId>web-log-monitor-web</artifactId>
+    <version>${web.log.monitor.web.version}</version>
+    <packaging>war</packaging>
 
-    <name>web-log-monitor-test</name>
+    <name>web-log-monitor-web</name>
 
     <dependencies>
 
+
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
+            <artifactId>spring-webmvc</artifactId>
         </dependency>
-
 
         <!-- modules -->
         <dependency>
@@ -39,10 +39,6 @@
         <dependency>
             <groupId>web-log-monitor</groupId>
             <artifactId>web-log-monitor-dao</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>web-log-monitor</groupId>
-            <artifactId>web-log-monitor-integration</artifactId>
         </dependency>
 
 

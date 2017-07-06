@@ -19,6 +19,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = {
         "classpath:/spring/application-context-biz.xml",
         "classpath:/spring/application-context-dao.xml",
+        "classpath:/spring/application-context-integration.xml",
+        "classpath:/spring/application-context-integration-jms-broker.xml",
+        "classpath:/spring/application-context-integration-jms-producer.xml",
+        "classpath:/spring/application-context-integration-jms-consumer.xml",
+
 })
 public class BaseTest {
 }
