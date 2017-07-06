@@ -3,14 +3,16 @@ package web.log.monitor.service.entity;
 
 import lombok.Data;
 
-import java.time.LocalDateTime;
-
+import java.util.List;
 
 
 @Data
-public class RegressionData {
+public class HttpErrorStatisticData {
 
 
+    private List<HttpErrorStatisticTrainSet> trainSet;
+
+    private double x;
     private double actualValue;
     private double predictValue;
 

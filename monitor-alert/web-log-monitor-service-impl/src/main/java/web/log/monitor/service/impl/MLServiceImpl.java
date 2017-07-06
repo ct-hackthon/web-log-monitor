@@ -2,10 +2,11 @@ package web.log.monitor.service.impl;
 
 import org.apache.commons.math3.stat.regression.OLSMultipleLinearRegression;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
-import web.log.monitor.service.api.RegressionService;
-import web.log.monitor.service.entity.RegressionData;
+import web.log.monitor.service.api.MLService;
+import web.log.monitor.service.entity.HttpErrorStatisticData;
+import web.log.monitor.service.entity.HttpErrorStatisticTrainSet;
 
-import java.time.LocalDateTime;
+import java.util.stream.Stream;
 
 /************************************************************
  * Copy Right Information : 
@@ -18,7 +19,7 @@ import java.time.LocalDateTime;
  * Sr *** Date      *** Modified By *** Why & What is modified
  * 1. *** 2017/7/4 *** fulw *** Initial
  ***********************************************************/
-public class RegressionServiceImpl implements RegressionService {
+public class MLServiceImpl implements MLService {
 
 
     public static void simple() {
@@ -91,14 +92,21 @@ public class RegressionServiceImpl implements RegressionService {
 
 
     public static void main(String[] arg){
-        RegressionServiceImpl.simple();
+        MLServiceImpl.simple();
     }
 
+
+
     @Override
-    public void simpleRegression(RegressionData data) {
+    public void httpErrorPredict(HttpErrorStatisticData data) {
 
         SimpleRegression regression = new SimpleRegression();
-        double predictValue = regression.predict(data.getTimeMinuteId());
+        Stream<HttpErrorStatisticTrainSet> stream = data.getTrainSet().stream();
+        stream.forEach(x -> regression.addData(x.getX(),x.getY()));
+
+        double predictValue = regression.predict(data.getX());
+        data.setPredictValue(predictValue);
+
 
     }
 }

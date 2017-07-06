@@ -24,7 +24,7 @@ public class TimeUtil {
         return formatter.format(time);
     }
 
-    public static Long getMinuteid(LocalDateTime time){
+    public static Long getMinuteId(LocalDateTime time){
 
         BigDecimal year = BigDecimal.valueOf(time.getYear());
         BigDecimal month = BigDecimal.valueOf(time.getMonthValue());
@@ -43,7 +43,7 @@ public class TimeUtil {
 
     public static void main(String[] arg){
         LocalDateTime now = LocalDateTime.now();
-        long minuteId = TimeUtil.getMinuteid(now);
+        long minuteId = TimeUtil.getMinuteId(now);
         System.out.println(minuteId);
         System.out.println(now);
         System.out.println(TimeUtil.getStandardTimeMinuteText(now));

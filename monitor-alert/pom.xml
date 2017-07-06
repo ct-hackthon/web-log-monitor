@@ -38,6 +38,7 @@
         <web.log.monitor.dao.version>1.0.0</web.log.monitor.dao.version>
         <web.log.monitor.common.version>1.0.0</web.log.monitor.common.version>
         <web.log.monitor.integration.version>1.0.0</web.log.monitor.integration.version>
+        <web.log.monitor.web.version>1.0.0</web.log.monitor.web.version>
 
         <spring.version>4.3.9.RELEASE</spring.version>
         <guava.version>19.0</guava.version>
