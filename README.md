@@ -15,5 +15,15 @@
  
  ## monitor-frontend ##
  数据可视化前端模块
+ 
+ 
+ # 环境搭建 #
+ ## Zookeeper ##
+ ## Active MQ ##
+ admin/admin
+ 
+ url http://localhost:8161
+ 
+ ## MYSQL ##
 
 
