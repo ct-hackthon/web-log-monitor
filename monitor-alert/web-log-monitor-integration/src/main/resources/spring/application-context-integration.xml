@@ -17,5 +17,6 @@
 
 	<import resource="application-context-integration-jms-broker.xml"/>
 	<import resource="application-context-integration-jms-producer.xml"/>
+	<!--<import resource="application-context-integration-jms-consumer.xml"/>-->
 
 </beans>

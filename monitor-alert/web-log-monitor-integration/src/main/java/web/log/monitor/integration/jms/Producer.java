@@ -27,7 +27,9 @@ public class Producer {
 
     private JmsTemplate jmsQueueTemplate;
 
-    public void sendMessage(Destination destination, final String message) {
+    private Destination destination;
+
+    public void sendMessage(final String message) {
         System.out.println("---------------生产者发送消息-----------------");
         System.out.println("---------------生产者发了一个消息：" + message);
         jmsQueueTemplate.send(destination, new MessageCreator() {
@@ -42,5 +44,10 @@ public class Producer {
     @Qualifier("jmsQueueTemplate")
     public void setJmsQueueTemplate(JmsTemplate jmsQueueTemplate) {
         this.jmsQueueTemplate = jmsQueueTemplate;
+    }
+
+    @Autowired
+    public void setDestination(Destination destination) {
+        this.destination = destination;
     }
 }

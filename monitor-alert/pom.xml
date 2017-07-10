@@ -40,6 +40,7 @@
         <web.log.monitor.integration.version>1.0.0</web.log.monitor.integration.version>
         <web.log.monitor.web.version>1.0.0</web.log.monitor.web.version>
         <web.log.monitor.storm.version>1.0.0</web.log.monitor.storm.version>
+        <web.log.monitor.olep.version>1.0.0</web.log.monitor.olep.version>
 
         <spring.version>4.3.9.RELEASE</spring.version>
         <guava.version>19.0</guava.version>
@@ -231,6 +232,11 @@
                 <artifactId>web-log-monitor-storm</artifactId>
                 <version>${web.log.monitor.storm.version}</version>
             </dependency>
+            <dependency>
+                <groupId>web-log-monitor</groupId>
+                <artifactId>web-log-monitor-olep</artifactId>
+                <version>${web.log.monitor.olep.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
@@ -354,6 +360,7 @@
         <module>web-log-monitor-integration</module>
         <module>web-log-monitor-web</module>
         <module>web-log-monitor-storm</module>
+        <module>web-log-monitor-olep</module>
     </modules>
 
 
