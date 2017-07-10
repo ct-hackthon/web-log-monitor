@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
  * Modification history : 
  *
  * Sr *** Date      *** Modified By *** Why & What is modified
- * 1. *** 2017/7/4  *** fulw        *** Initial
+ * 1. *** 2017/7/4  *** fulongwen        *** Initial
  ***********************************************************/
 @Data
 public class HttpErrorStatisticDo {

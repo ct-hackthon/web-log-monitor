@@ -13,7 +13,7 @@ import java.time.format.DateTimeFormatter;
  * Modification history : 
  *
  * Sr *** Date      *** Modified By *** Why & What is modified
- * 1. *** 2017/7/5 *** fulw *** Initial
+ * 1. *** 2017/7/5 *** fulongwen *** Initial
  ***********************************************************/
 public class TimeUtil {
 

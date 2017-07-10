@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  * Modification history : 
  *
  * Sr *** Date      *** Modified By *** Why & What is modified
- * 1. *** 2017/7/4 *** fulw *** Initial
+ * 1. *** 2017/7/4 *** fulongwen *** Initial
  ***********************************************************/
 @Configuration
 @ComponentScan

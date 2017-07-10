@@ -1,6 +1,4 @@
-package web.log.monitor.service.entity;
-
-import lombok.Data;
+package web.log.monitor.storm.function;
 
 /************************************************************
  * Copy Right Information : 
@@ -11,11 +9,8 @@ import lombok.Data;
  * Modification history : 
  *
  * Sr *** Date      *** Modified By *** Why & What is modified
- * 1. *** 2017/7/6 *** fulongwen *** Initial
+ * 1. *** 2017/7/10 *** fulongwen *** Initial
  ***********************************************************/
-@Data
-public class HttpErrorStatisticTrainSet {
+public class HttpCodeFunction {
 
-    private double x;
-    private double y;
 }

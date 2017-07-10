@@ -16,7 +16,7 @@ import javax.jms.TextMessage;
  * Modification history : 
  *
  * Sr *** Date      *** Modified By *** Why & What is modified
- * 1. *** 2017/7/6 *** fulw *** Initial
+ * 1. *** 2017/7/6 *** fulongwen *** Initial
  ***********************************************************/
 
 public class Listener  implements MessageListener {

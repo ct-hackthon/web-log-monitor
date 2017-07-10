@@ -39,6 +39,7 @@
         <web.log.monitor.common.version>1.0.0</web.log.monitor.common.version>
         <web.log.monitor.integration.version>1.0.0</web.log.monitor.integration.version>
         <web.log.monitor.web.version>1.0.0</web.log.monitor.web.version>
+        <web.log.monitor.storm.version>1.0.0</web.log.monitor.storm.version>
 
         <spring.version>4.3.9.RELEASE</spring.version>
         <guava.version>19.0</guava.version>
@@ -48,6 +49,7 @@
         <mysql.jdbc.version>6.0.6</mysql.jdbc.version>
         <commons.logging.version>1.2</commons.logging.version>
         <commons.math3.version>3.6.1</commons.math3.version>
+        <storm.core.version>1.1.0</storm.core.version>
         <activemq.version>5.15.0</activemq.version>
 
         <packaging.all>war</packaging.all>
@@ -175,6 +177,17 @@
                 <version>${activemq.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.apache.storm</groupId>
+                <artifactId>storm-core</artifactId>
+                <version>${storm.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.34</version>
+            </dependency>
 
 
             <!-- =================== Module ======================== -->
@@ -212,6 +225,11 @@
                 <groupId>web-log-monitor</groupId>
                 <artifactId>web-log-monitor-integration</artifactId>
                 <version>${web.log.monitor.integration.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>web-log-monitor</groupId>
+                <artifactId>web-log-monitor-storm</artifactId>
+                <version>${web.log.monitor.storm.version}</version>
             </dependency>
 
         </dependencies>
@@ -335,6 +353,7 @@
         <module>web-log-monitor-common</module>
         <module>web-log-monitor-integration</module>
         <module>web-log-monitor-web</module>
+        <module>web-log-monitor-storm</module>
     </modules>
 
 

@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * Modification history : 
  *
  * Sr *** Date      *** Modified By *** Why & What is modified
- * 1. *** 2017/7/5  *** fulw        *** Initial
+ * 1. *** 2017/7/5  *** fulongwen        *** Initial
  ***********************************************************/
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
