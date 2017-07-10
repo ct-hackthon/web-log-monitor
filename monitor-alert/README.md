@@ -1,2 +1,28 @@
 
 
+# web 模块 #
+```
+machine learning 模块
+可视化后台
+
+```
+web-log-monitor-web
+   - web-log-monitor-biz
+   - web-log-monitor-dao
+   - web-log-monitor-common
+   - web-log-monitor-service-api
+   - web-log-montiro-service-impl
+
+# olep 模块 #
+```
+往queue里面投递日志
+
+```
+
+# storm模块 #
+```
+流式计算模块
+```
+web-log-monitor-storm
+ - web-log-monitor-dao
+ - web-log-monitor-common
