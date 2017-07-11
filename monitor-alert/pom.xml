@@ -47,6 +47,7 @@
         <lombok.version>1.16.16</lombok.version>
         <junit.version>4.12</junit.version>
         <log4j.version>2.6.2</log4j.version>
+        <slf4j.version>1.7.21</slf4j.version>
         <mysql.jdbc.version>6.0.6</mysql.jdbc.version>
         <commons.logging.version>1.2</commons.logging.version>
         <commons.math3.version>3.6.1</commons.math3.version>
@@ -128,11 +129,6 @@
             </dependency>
 
             <!-- ================== Logging ======================= -->
-            <!--<dependency>-->
-            <!--<groupId>log4j</groupId>-->
-            <!--<artifactId>log4j</artifactId>-->
-            <!--<version>${log4j.version}</version>-->
-            <!--</dependency>-->
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-core</artifactId>
@@ -140,9 +136,25 @@
             </dependency>
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-jcl</artifactId>
+                <artifactId>log4j-api</artifactId>
                 <version>${log4j.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-web</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.slf4j</groupId>-->
+                <!--<artifactId>jcl-over-slf4j</artifactId>-->
+                <!--<version>${slf4j.version}</version>-->
+                <!--<scope>runtime</scope>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+                <!--<groupId>org.apache.logging.log4j</groupId>-->
+                <!--<artifactId>log4j-slf4j-impl</artifactId>-->
+                <!--<version>${log4j.version}</version>-->
+            <!--</dependency>-->
 
 
             <!-- ==================== 3rd party  ==================== -->
@@ -182,6 +194,13 @@
                 <groupId>org.apache.storm</groupId>
                 <artifactId>storm-core</artifactId>
                 <version>${storm.core.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.ptgoetz</groupId>
+                <artifactId>storm-jms</artifactId>
+                <version>1.0.2</version>
             </dependency>
 
             <dependency>
@@ -263,6 +282,20 @@
 
     </dependencies>
 
+    <!-- module configuration here -->
+    <modules>
+        <module>web-log-monitor-service-impl</module>
+        <module>web-log-monitor-service-api</module>
+        <module>web-log-monitor-dao</module>
+        <module>web-log-monitor-test</module>
+        <module>web-log-monitor-biz</module>
+        <module>web-log-monitor-common</module>
+        <module>web-log-monitor-integration</module>
+        <module>web-log-monitor-web</module>
+        <module>web-log-monitor-storm</module>
+        <module>web-log-monitor-olep</module>
+    </modules>
+
     <build>
         <plugins>
             <plugin>
@@ -283,7 +316,6 @@
                     <allowSnapshots>false</allowSnapshots>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -299,7 +331,33 @@
                     </dependency>
                 </dependencies>
             </plugin>
-
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <!--<archive>-->
+                        <!--<manifest>-->
+                            <!--<mainClass>com.allen.capturewebdata.Main</mainClass>-->
+                        <!--</manifest>-->
+                    <!--</archive>-->
+                    <!--<descriptorRefs>-->
+                        <!--<descriptorRef>jar-with-dependencies</descriptorRef>-->
+                    <!--</descriptorRefs>-->
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <!--<configuration>-->
+                    <!--<archive>-->
+                        <!--<manifest>-->
+                            <!--<addClasspath>true</addClasspath>-->
+                            <!--<classpathPrefix>lib/</classpathPrefix>-->
+                            <!--<mainClass>web.log.monitor.storm.</mainClass>-->
+                        <!--</manifest>-->
+                    <!--</archive>-->
+                <!--</configuration>-->
+            </plugin>
         </plugins>
     </build>
 
@@ -349,19 +407,7 @@
     </pluginRepositories>
     -->
 
-    <!-- module configuration here -->
-    <modules>
-        <module>web-log-monitor-service-impl</module>
-        <module>web-log-monitor-service-api</module>
-        <module>web-log-monitor-dao</module>
-        <module>web-log-monitor-test</module>
-        <module>web-log-monitor-biz</module>
-        <module>web-log-monitor-common</module>
-        <module>web-log-monitor-integration</module>
-        <module>web-log-monitor-web</module>
-        <module>web-log-monitor-storm</module>
-        <module>web-log-monitor-olep</module>
-    </modules>
+
 
 
 </project>

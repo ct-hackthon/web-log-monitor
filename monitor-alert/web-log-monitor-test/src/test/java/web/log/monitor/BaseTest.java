@@ -22,7 +22,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
         "classpath:/spring/application-context-integration.xml",
         "classpath:/spring/application-context-integration-jms-broker.xml",
         "classpath:/spring/application-context-integration-jms-producer.xml",
-        "classpath:/spring/application-context-integration-jms-consumer.xml",
+//        "classpath:/spring/application-context-integration-jms-consumer.xml",
 
 })
 public class BaseTest {

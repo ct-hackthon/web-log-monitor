@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ON">
+
+
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+        <File name="ERROR" fileName="/tmp/logs/web-log-monitor.log" append="true">
+            <ThresholdFilter level="error"/>
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <!--<Logger name="web.log.monitor.storm" level="ERROR">-->
+            <!--<AppenderRef ref="log" />-->
+        <!--</Logger>-->
+        <Root level="debug">
+            <!--              这儿为trace表示什么都可以打印出来了,其他几个级别分别为：TRACE、DEBUG、INFO、WARN、ERROR和FATAL -->
+            <AppenderRef ref="CONSOLE" />
+        </Root>
+        <root level="debug">
+            <appender-ref ref="CONSOLE" />
+        </root>
+    </Loggers>
+</Configuration>

@@ -1,7 +1,6 @@
 package web.log.monitor.olep;
 
 import org.apache.xbean.spring.context.ClassPathXmlApplicationContext;
-import org.apache.xbean.spring.context.SpringApplicationContext;
 import org.springframework.context.ApplicationContext;
 import web.log.monitor.integration.jms.Producer;
 

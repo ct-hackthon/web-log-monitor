@@ -1,7 +1,16 @@
 package web.log.monitor.storm;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
-import org.apache.storm.shade.com.twitter.chill.config.Config;
+import org.apache.storm.StormSubmitter;
+import org.apache.storm.topology.TopologyBuilder;
+import web.log.monitor.storm.bolt.DemoBolt;
+import web.log.monitor.storm.spout.WebLogSpout;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /************************************************************
  * Copy Right Information : 
@@ -16,29 +25,46 @@ import org.apache.storm.shade.com.twitter.chill.config.Config;
  ***********************************************************/
 public class Starter {
 
-    public static void main(String[] arg){
+    private static Logger LOGGER = LogManager.getLogger(Starter.class.getName());
 
-//        // define Spout
-//        FixedBatchSpout spout = new FixedBatchSpout(new Fields("a", "b", "c"),
-//                1, new Values(1, 2, 3), new Values(4, 1, 6),
-//                new Values(3, 0, 8));
-//        spout.setCycle(false);
+    private static final String WEB_LOG_SPOUT_ID = "webLogSpout";
+    private static final String DEMO_BOLT_ID = "demoBolt";
+
+    public static void main(String[] arg) {
+
+        LOGGER.info("Start a topology");
+
+        // define Spout
+        WebLogSpout webLogSpout = new WebLogSpout();
+
+        // define bolts
+        DemoBolt demoBolt = new DemoBolt();
+
 
         // define Topology
 //        TridentTopology topology = new TridentTopology();
-//        topology.newStream("spout", spout)
-//                .each(new Fields("b"), new MyFunction(), new Fields("d"))
-//                .each(new Fields("a", "b", "c", "d"), new PrintFunctionBolt(),
-//                        new Fields(""));
+        TopologyBuilder builder = new TopologyBuilder();
+        builder.setSpout(WEB_LOG_SPOUT_ID, webLogSpout, 1);
+        builder.setBolt(DEMO_BOLT_ID,demoBolt).shuffleGrouping(WEB_LOG_SPOUT_ID);
 
         //Define Config
-//        Config config = new Config();
-//        config.setNumWorkers(2);
-//        config.setNumAckers(1);
-//        config.setDebug(false);
+        Config conf = new Config();
+        conf.setDebug(true);
+        conf.setNumWorkers(3);
 
-        // Start topology
-//        StormSubmitter.submitTopology("trident_function", config,
-//                topology.build());
+        //提交 本地
+//        LocalCluster cluster = new LocalCluster();
+//        System.out.println("start wordcount");
+//        cluster.submitTopology("web-log-monitor",   config, builder.createTopology());
+
+
+        // 提交到集群
+        try{
+            String topoName = "web-log";
+            StormSubmitter.submitTopology(topoName, conf, builder.createTopology());
+        }catch (Exception e){
+            LOGGER.info(e.getMessage());
+        }
+
     }
 }
