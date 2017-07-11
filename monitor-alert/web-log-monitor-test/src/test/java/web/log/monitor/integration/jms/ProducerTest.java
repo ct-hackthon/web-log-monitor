@@ -25,9 +25,9 @@ public class ProducerTest extends BaseTest{
 
     @Test
     public void testSend() {
-        for (int i=0; i<2; i++) {
-            producer.sendMessage("你好，生产者！这是消息：" + (i+1));
-
-        }
+//        for (int i=0; i<2; i++) {
+//            producer.sendMessage("你好，生产者！这是消息：" + (i+1));
+//
+//        }
     }
 }
