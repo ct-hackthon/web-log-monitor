@@ -7,6 +7,7 @@ create table `http_error_statistic`
   `ErrorCount` 	BIGINT(11) DEFAULT 0 COMMENT '非HTTP200 的数量',
   `TimeBox` VARCHAR(50),
   `TimeId` BigInt(64),
+  `Percentage` int(11),
   `CreateTime` timestamp null,
   `UpdateTime` timestamp default CURRENT_TIMESTAMP not null,
   PRIMARY KEY (`Id`),

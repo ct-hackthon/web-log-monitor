@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+</head>
+<body>
+
+<div class="row">
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+</div>
+<div class="row">
+    <div class="col-md-8">.col-md-8</div>
+    <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-5"><div id="http-normal-line-chart" style="height:400px"></div></div>
+    <div class="col-md-5"><div id="http-error-line-chart" style="height:400px"></div></div>
+    <div class="col-md-1"></div>
+</div>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-4"><div id="http-error-box-chart" style="height:400px"></div></div>
+    <div class="col-md-3">
+        <table class="table table-hover">
+          <tr>
+              <td>当前错误量</td>
+              <td id="current_error_count"></td>
+          </tr>
+            <tr>
+                <td>预测的错误量</td>
+                <td id="prediect_error_count"></td>
+            </tr>
+            <tr>
+                <td>预测偏差（实际减去预测)</td>
+                <td id="pre_cur_error_count"></td>
+            </tr>
+            <tr>
+                <td>平均值</td>
+                <td id="mean_error_count"></td>
+            </tr>
+            <tr>
+                <td>方差</td>
+                <td id="standard_devation"></td>
+            </tr>
+            <tr>
+                <td>3倍方差</td>
+                <td id="outerlier"></td>
+            </tr>
+            <tr>
+                <td>Time Window</td>
+                <td id="Time_Window"></td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="col-md-3"><div id="http-url-topN-bar-chart" style="height:400px"></div></div>
+    <div class="col-md-1"></div>
+</div>
+
+
+
+
+<!-- ECharts单文件引入 -->
+<script type="text/javascript" src="js/echarts.min.js"></script>
+<script type="text/javascript" src="js/echart-theme-dark.js"></script>
+<script type="text/javascript" src="js/echart-extentsion-datatool.js"></script>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="script/Base.js"></script>
+<script type="text/javascript" src="script/http-error-statistic.js"></script>
+<script type="text/javascript" src="script/http-error-box.js"></script>
+<script type="text/javascript" src="script/http-statistic-result.js"></script>
+<script type="text/javascript" src="script/http-url-topN-bar-chart.js"></script>
+
+</body>

@@ -31,7 +31,9 @@ public class DemoBolt extends BaseBolt{
 
         SpoutHistoryDao spoutHistoryDao = SpringContextUtil.getBean("spoutHistoryDao");
 
-        spoutHistoryDao.save(tuple.getString(0));
+//        spoutHistoryDao.save(tuple.getString(0));
+
+//        basicOutputCollector.emit()
     }
 
     @Override

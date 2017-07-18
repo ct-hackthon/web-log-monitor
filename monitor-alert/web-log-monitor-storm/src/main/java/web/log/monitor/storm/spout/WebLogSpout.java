@@ -45,18 +45,18 @@ public class WebLogSpout extends BaseRichSpout implements MessageListener {
     public void onMessage(Message message) {
 
            if(message instanceof TextMessage){
-               LOGGER.info("Receive a message " + message);
+//               LOGGER.info("Receive a message " + message);
                try {
                    String data  = ((TextMessage) message).getText();
                    if(queue!=null){
-                       LOGGER.info("LinkedQueueSize" + queue.size());
+//                       LOGGER.info("LinkedQueueSize" + queue.size());
                        queue.offer(data);
                    }else{
-                       LOGGER.warn("LinkedQueueSize is null ");
+//                       LOGGER.warn("LinkedQueueSize is null ");
                    }
 
                } catch (JMSException e) {
-                   LOGGER.info("Error occur on receiving message");
+//                   LOGGER.info("Error occur on receiving message");
                }
 
            }
@@ -75,7 +75,7 @@ public class WebLogSpout extends BaseRichSpout implements MessageListener {
             this.collector = spoutOutputCollector;
         }
         LOGGER.info("============================== create blockqing queue ==============================");
-        LOGGER.info("LinkedBlockingQueue size " + queue.size());
+//        LOGGER.info("LinkedBlockingQueue size " + queue.size());
 
         LOGGER.info("============================== init a spoutOutputCollector ==============================");
 

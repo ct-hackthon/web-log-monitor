@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+</head>
+<body>
+
+    <div class="row">
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+        <div class="col-md-1">.col-md-1</div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div id="http-poi-map" style="height:600px"></div>
+        </div>
+        <div class="col-md-4">
+            <table class="table table-hover">
+                <tr>
+                    <td></td>
+                    <td ></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>当前错误量</td>
+                    <td id="current_error_count"></td>
+                </tr>
+                <tr>
+                    <td>预测的错误量</td>
+                    <td id="prediect_error_count"></td>
+                </tr>
+                <tr>
+                    <td>预测偏差（实际减去预测)</td>
+                    <td id="pre_cur_error_count"></td>
+                </tr>
+                <tr>
+                    <td>平均值</td>
+                    <td id="mean_error_count"></td>
+                </tr>
+                <tr>
+                    <td>标准差</td>
+                    <td id="standard_devation"></td>
+                </tr>
+                <tr>
+                    <td>2倍标准差</td>
+                    <td id="outerlier"></td>
+                </tr>
+                <tr>
+                    <td>Time Window</td>
+                    <td id="Time_Window"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div id="http-poi-line-chart" style="height:600px"></div>
+        </div>
+        <div class="col-md-4">
+            <div id="http-error-box-chart" style="height:600px"></div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<!-- ECharts单文件引入 -->
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/echart-theme-dark.js"></script>
+    <script type="text/javascript" src="js/echart-extentsion-datatool.js"></script>
+    <script type="text/javascript" src="js//china.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+
+    <script type="text/javascript" src="script2/Base.js"></script>
+    <script type="text/javascript" src="script2/http_poi_line_chart.js"></script>
+    <script type="text/javascript" src="script/thermodynamicChart.js"></script>
+    <script type="text/javascript" src="script2/http_error_box.js"></script>
+    <script type="text/javascript" src="script2/http_result.js"></script>
+
+
+</body>

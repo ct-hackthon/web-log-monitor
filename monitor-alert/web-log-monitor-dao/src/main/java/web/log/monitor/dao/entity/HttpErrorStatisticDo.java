@@ -19,8 +19,9 @@ import java.time.LocalDateTime;
 public class HttpErrorStatisticDo {
 
     private Integer id;
-    private Long normalCount;
-    private Long errorCount;
+    private Integer normalCount;
+    private Integer errorCount;
+    private Double percentage;
     private String timeBox;
     private Long  timeId;
     private LocalDateTime createTime;

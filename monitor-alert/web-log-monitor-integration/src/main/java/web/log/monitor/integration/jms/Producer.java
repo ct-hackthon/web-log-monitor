@@ -30,8 +30,8 @@ public class Producer {
     private Destination destination;
 
     public void sendMessage(final String message) {
-        System.out.println("---------------生产者发送消息-----------------");
-        System.out.println("---------------生产者发了一个消息：" + message);
+//        System.out.println("---------------生产者发送消息-----------------");
+//        System.out.println("---------------生产者发了一个消息：" + message);
         jmsQueueTemplate.send(destination, new MessageCreator() {
             public Message createMessage(Session session) throws JMSException {
                 return session.createTextMessage(message);

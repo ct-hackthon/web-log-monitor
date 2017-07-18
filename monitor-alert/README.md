@@ -26,7 +26,6 @@ web-log-monitor-web
 web-log-monitor-storm
  - web-log-monitor-dao
  - web-log-monitor-common
- - web-log-monitor-integration
  
 在 linux 下面 如何 执行 storm topology 的 jar
 命令格式：storm jar 【jar路径】 【拓扑包名.拓扑类名】 【拓扑名称】
@@ -34,3 +33,7 @@ web-log-monitor-storm
 
 storm kill topologyName
 
+
+
+# Maven 构建 #
+mvn clean compile package -Dmaven.test.skip=true

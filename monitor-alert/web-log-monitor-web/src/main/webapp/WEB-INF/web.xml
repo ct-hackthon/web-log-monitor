@@ -1,24 +1,23 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
-    <display-name>ActiveMQSpringDemo</display-name>
+    <display-name>web-log-monitor</display-name>
 
     <!-- Log4J Start -->
-    <context-param>
-        <param-name>log4jConfigLocation</param-name>
-        <param-value>classpath:log4j.properties</param-value>
-    </context-param>
-    <context-param>
-        <param-name>log4jRefreshInterval</param-name>
-        <param-value>6000</param-value>
-    </context-param>
-    <!-- Spring Log4J config -->
-    <listener>
-        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
-    </listener>
+    <!--<context-param>-->
+        <!--<param-name>log4jConfigLocation</param-name>-->
+        <!--<param-value>classpath:/log4j/log4j2.xml</param-value>-->
+    <!--</context-param>-->
+    <!--<context-param>-->
+        <!--<param-name>log4jRefreshInterval</param-name>-->
+        <!--<param-value>6000</param-value>-->
+    <!--</context-param>-->
+    <!--&lt;!&ndash; Spring Log4J config &ndash;&gt;-->
+    <!--<listener>-->
+        <!--<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>-->
+    <!--</listener>-->
     <!-- Log4J End -->
 
     <!-- Spring 编码过滤器 start -->
@@ -44,7 +43,10 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            classpath*:/spring/application-context-*.xml
+            classpath*:/spring/application-context-biz.xml
+            classpath*:/spring/application-context-dao.xml
+            classpath*:/spring/application-context-service-impl.xml
+            classpath*:/spring/application-context-common.xml
         </param-value>
     </context-param>
     <listener>
@@ -67,7 +69,7 @@
     <servlet-mapping>
         <servlet-name>SpringMVC</servlet-name>
         <!-- Filter all resources -->
-        <url-pattern>/</url-pattern>
+        <url-pattern>/weblog/*</url-pattern>
     </servlet-mapping>
     <!-- Spring MVC Config End -->
 

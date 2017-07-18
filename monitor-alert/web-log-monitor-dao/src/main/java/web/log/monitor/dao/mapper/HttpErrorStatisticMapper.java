@@ -26,9 +26,9 @@ public class HttpErrorStatisticMapper implements RowMapper<HttpErrorStatisticDo>
         domain .setId(resultSet.getInt("Id"));
         domain .setTimeId(resultSet.getLong("TimeId"));
         domain .setTimeBox(resultSet.getString("TimeBox"));
-        domain .setNormalCount(resultSet.getLong("NormalCount"));
-        domain .setErrorCount(resultSet.getLong("ErrorCount"));
-//        domain .setCreateTime(resultSet.getTime("CreateTime"));
+        domain .setNormalCount(resultSet.getInt("NormalCount"));
+        domain .setErrorCount(resultSet.getInt("ErrorCount"));
+        domain .setPercentage(resultSet.getDouble("Percentage"));
 
         return domain;
     }

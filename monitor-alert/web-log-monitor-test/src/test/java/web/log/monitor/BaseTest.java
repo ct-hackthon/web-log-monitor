@@ -17,7 +17,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  ***********************************************************/
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
-//        "classpath:/spring/application-context-biz.xml",
+//        "classpath:/spring/application-context-common.xml",
         "classpath:/spring/application-context-dao.xml",
         "classpath:/spring/application-context-integration.xml",
         "classpath:/spring/application-context-integration-jms-broker.xml",

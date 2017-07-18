@@ -24,6 +24,26 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>web-log-monitor</groupId>
+            <artifactId>web-log-monitor-dao</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>web-log-monitor</groupId>
+            <artifactId>web-log-monitor-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>web-log-monitor</groupId>
+            <artifactId>web-log-monitor-service-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>web-log-monitor</groupId>
+            <artifactId>web-log-monitor-service-impl</artifactId>
+        </dependency>
 
     </dependencies>
 </project>
